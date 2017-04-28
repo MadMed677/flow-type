@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, './src'),
-    entry: './main.react.js',
+    entry: './app.react.js',
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: 'dist',
@@ -18,7 +18,8 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['es2015']
+                            presets: ['es2015'],
+                            plugins: ['transform-class-properties']
                         }
                     }
                 ]

@@ -1,11 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-class App extends React.Component {
+import styles from 'styled-components';
+
+class Main extends React.Component {
+    props: {
+        prop1: string,
+        prop2: number,
+    };
+
+    static defaultProps = {
+        prop1: "foo"
+    };
+
     render() {
-        return <p>'Hello world'</p>;
+        return (
+            <div>
+                <div>prop1: { this.props.prop1 }</div>
+                <div>prop2: { this.props.prop2 }</div>
+            </div>
+        );
     }
 }
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+export default Main;
